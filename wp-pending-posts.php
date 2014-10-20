@@ -16,15 +16,12 @@ defined('ABSPATH') or die("No script kiddies, please!");
 
 // Add dashboard widgets
 function wpzgreen_add_pending_widget() {
-	// Admin-level users only
-	if (current_user_can('add_users')) {
-		// Add a pending posts dashboard widget
-		wp_add_dashboard_widget(
-			'wpzgreen_pending_dashboard_widget',         // Widget slug.
-			'Urgent and/or pending posts',         // Title.
-			'wpzgreen_pending_dashboard_widget_function' // Display function.
-		);
-	}
+	// Add a pending posts dashboard widget
+	wp_add_dashboard_widget(
+		'wpzgreen_pending_dashboard_widget',         // Widget slug.
+		'Urgent and/or pending posts',         // Title.
+		'wpzgreen_pending_dashboard_widget_function' // Display function.
+	);
 }
 
 add_action( 'wp_dashboard_setup', 'wpzgreen_add_pending_widget' );
